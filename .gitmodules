@@ -1,0 +1,4 @@
+[submodule "packages/udemy-ts-editor"]
+	path = packages/local-client
+	url = https://github.com/HeoJeongBo/udemy-ts-editor.git
+	branch = master
