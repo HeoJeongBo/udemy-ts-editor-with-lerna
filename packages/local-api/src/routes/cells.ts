@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { application } from 'express';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -14,9 +14,9 @@ export const createCellsRouter = (filename: string, dir: string) => {
 
     const fullPath = path.join(dir, filename);
 
-    router.get('/cells,', async (req, res) => {
+    router.get('/cells', async (req, res) => {
         try {
-            const result = await fs.readFile(fullPath, { encoding: 'utf8' });
+            const result = await fs.readFile(fullPath, { encoding: 'utf-8' });
 
             res.send(JSON.parse(result));
         } catch (err: any) {
